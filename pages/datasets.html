@@ -8,6 +8,13 @@
 </head>
 <body>
 
+    <!-- idk where to put this, so here you go.-->
+    <!-- Load SheetJS (XLSX library) -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.19.3/dist/xlsx.full.min.js"></script>
+
+    <!-- Script for counting rows-->
+    <script src="../js/fetchRowCount.js"></script>
+
     <!-- Header -->
     <div class="w3-bar w3-light-blue w3-xlarge">
         <a class="w3-bar-item" href="../index.html">Alex Post</a>
@@ -32,7 +39,7 @@
 
         <tr class="w3-row">
             <td class="w3-col m2">Counter-Strike 2</td>
-            <td class="w3-col m8">A dataset of 700 and counting Counter-Strike 2 games. Includes various variables such as detailed KDR, ADR, and other aspects of the match.</td>
+            <td class="w3-col m8">A dataset of <span id="rowCount">700</span> and counting Counter-Strike 2 games. Includes various variables such as detailed KDR, ADR, and other aspects of the match.</td>
             <td class="w3-col m2"><a href="../datasets/xlsx/CounterStrike2.xlsx">CounterStrike2.xlsx</a> <a href="../datasets/csv/CounterStrike2.zip">CounterStrike2.zip (Outdated)</a></td>
         </tr>
 
