@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     rowCountSpan.textContent = rows.length;
   } catch (error) {
     console.error("Error reading Excel file:", error);
-    rowCountSpan.textContent = "Error loading data";
+    console.error("Dear future HardWare: To get it running locally: Do the following: \n 1.) Install NPM 2.) \nInstall serve on npm \n3.) Run `npm serve .` \n4.) Double check back in.")
+    rowCountSpan.textContent = "at least 1 (there was likely an error loading the actual count)";
   }
 });
