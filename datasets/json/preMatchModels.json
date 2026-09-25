@@ -1,0 +1,62 @@
+[
+  {
+    "model": "Random Forest Classifier",
+    "accuracy": 0.5708392603129445,
+    "parameters": {
+      "max_depth": 9,
+      "n_estimators": 20
+    }
+  },
+  {
+    "model": "Histogram Gradient Boosting",
+    "accuracy": 0.5300142247510669,
+    "parameters": {
+      "learning_rate": 1.0
+    }
+  },
+  {
+    "model": "AdaBoost with DecisionTree",
+    "accuracy": 0.5284495021337127,
+    "parameters": {
+      "learning_rate": 0.9478947368421053,
+      "n_estimators": 30
+    }
+  },
+  {
+    "model": "K Nearest Neighbors",
+    "accuracy": 0.5236130867709815,
+    "parameters": {
+      "n_neighbors": 10,
+      "weights": "distance"
+    }
+  },
+  {
+    "model": "Decision Tree",
+    "accuracy": 0.5130867709815078,
+    "parameters": {
+      "max_depth": 5
+    }
+  },
+  {
+    "model": "Most Frequent",
+    "accuracy": 0.4791666666666667,
+    "parameters": {
+      "strategy": "most_frequent"
+    }
+  },
+  {
+    "model": "Logistic Regression",
+    "accuracy": 0.4605974395448079,
+    "parameters": {
+      "C": 0.01,
+      "l1_ratio": 0.0
+    }
+  },
+  {
+    "model": "Uniform",
+    "accuracy": 0.2916666666666667,
+    "parameters": {
+      "strategy": "uniform"
+    }
+  }
+]

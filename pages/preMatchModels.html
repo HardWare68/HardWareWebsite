@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alex Post</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/w3.css">
+</head>
+<body>
+<!-- Header -->
+    <div class="w3-bar w3-light-blue w3-xlarge">
+        <a class="w3-bar-item" href="../index.html">Alex Post</a>
+        <a href="../pages/coding.html" class="w3-bar-item w3-button">Coding</a>
+        <a href="../pages/projects.html" class="w3-bar-item w3-button">Projects</a>
+        <a href="../pages/datasets.html" class="w3-bar-item w3-button">Datasets</a>
+    </div> 
+
+    <h1>Model Results</h1>
+
+    <p>Before starting a Premier game in Counter Strike, you are presented with a screen that has information, such as:</p>
+    <ul>
+        <li>Rank of every player</li>
+        <li>What maps the teams have won on recently</li>
+        <li>Any players that are queued together</li>
+    </ul>
+
+
+    <p>My goal was to see if, using that information, it would be possible to predict the winner of a match. Here is a plethora of models trained on the data (see the <a href="datasets.html">datasets</a> page for the data!), ranked by their accuracy.</p>
+
+    <p>Note the two "dummy" models in there, Uniform and Most Frequent. In order to be considered good, a model should do better than these dummy models.</p>
+
+    <div class="w3-container w3-panel w3-border w3-round-large w3-margin">
+        <table id="results-table" class="w3-table w3-bordered w3-round-large w3-panel w3-striped">
+            <th><tr id="header-row" class="w3-blue"></tr></th>
+            <tbody id="body"></tbody>
+        </table>
+    </div>
+
+<!-- Footer -->
+    <div class="w3-container w3-light-blue">
+        <p class="w3-margin-left"> Website created by Alex Post.</p>
+        <p class="w3-margin-left w3-tiny"> Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.CSS</a>.</p>
+    </div>
+
+    <script>
+    console.log("Attempting connection...");
+    fetch("../datasets/json/preMatchModels.json")
+    .then(r => r.json())
+    .then(data => {
+        const headerRow = document.getElementById("header-row");
+        const tbody = document.getElementById("body");
+        const cols = Object.keys(data[0]);
+
+        cols.forEach(col => {
+            const th = document.createElement("th");
+            th.textContent = col;
+            headerRow.appendChild(th);
+        });
+
+        data.forEach(row => {
+            const tr = document.createElement("tr");
+            cols.forEach(col => {
+                const td = document.createElement("td");
+                const val = row[col];
+
+                //round them numbers
+                if (typeof val === "number") {
+                    td.textContent = val.toFixed(3);
+                } else if (val !== null && typeof val === "object") {
+                    //handle arrays and shit
+                    // formats {learning_rate: 0.01, epochs: 50} as "learning_rate: 0.01, epochs: 50"
+                    td.textContent = Object.entries(val)
+                        .map(([key, v]) => `${key}: ${v}`)
+                        .join(", ");
+                } else {
+                    td.textContent = val;
+                }
+
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+    });
+    </script>
+</body>
+</html>
