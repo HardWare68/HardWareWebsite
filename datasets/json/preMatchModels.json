@@ -1,81 +1,89 @@
 [
   {
-    "model": "Histogram Gradient Boosting",
-    "accuracy": 0.5625,
-    "parameters": {
-      "learning_rate": 1.0
-    }
-  },
-  {
     "model": "Decision Tree",
-    "accuracy": 0.5,
+    "accuracy": 0.6041666666666666,
     "parameters": {
-      "max_depth": 6
-    }
-  },
-  {
-    "model": "AdaBoost with DecisionTree",
-    "accuracy": 0.5,
-    "parameters": {
-      "learning_rate": 0.9478947368421053,
-      "n_estimators": 30
-    }
-  },
-  {
-    "model": "Most Frequent",
-    "accuracy": 0.4791666666666667,
-    "parameters": {
-      "strategy": "most_frequent"
-    }
-  },
-  {
-    "model": "Random Forest Classifier",
-    "accuracy": 0.4791666666666667,
-    "parameters": {
-      "max_depth": 3,
-      "n_estimators": 10
+      "max_depth": 9
     }
   },
   {
     "model": "K Nearest Neighbors",
-    "accuracy": 0.4583333333333333,
+    "accuracy": 0.5416666666666666,
     "parameters": {
-      "n_neighbors": 10,
+      "n_neighbors": 3,
       "weights": "distance"
     }
   },
   {
-    "model": "Support Vector Classification",
-    "accuracy": 0.4583333333333333,
+    "model": "Decision Tree with Bagging",
+    "accuracy": 0.5416666666666666,
     "parameters": {
-      "C": 0.12,
-      "degree": 3,
-      "gamma": "scale",
-      "kernel": "poly"
+      "estimator__max_depth": 5,
+      "estimator__min_samples_split": 2,
+      "n_estimators": 10
+    }
+  },
+  {
+    "model": "Histogram Gradient Boosting",
+    "accuracy": 0.5,
+    "parameters": {
+      "learning_rate": 0.5831578947368421
     }
   },
   {
     "model": "Multi-Layer Perceptron",
-    "accuracy": 0.4375,
+    "accuracy": 0.5,
     "parameters": {
       "hidden_layer_sizes": [
-        101,
-        101,
-        101
+        200,
+        100
       ]
     }
   },
   {
     "model": "Logistic Regression",
-    "accuracy": 0.3958333333333333,
+    "accuracy": 0.4791666666666667,
     "parameters": {
       "C": 0.01,
-      "l1_ratio": 0.0
+      "l1_ratio": 0.05263157894736842
+    }
+  },
+  {
+    "model": "AdaBoost with DecisionTree",
+    "accuracy": 0.4583333333333333,
+    "parameters": {
+      "learning_rate": 0.5831578947368421,
+      "n_estimators": 90
+    }
+  },
+  {
+    "model": "Random Forest Classifier",
+    "accuracy": 0.4375,
+    "parameters": {
+      "max_depth": 7,
+      "n_estimators": 30
+    }
+  },
+  {
+    "model": "Support Vector Classification",
+    "accuracy": 0.4375,
+    "parameters": {
+      "C": 1.0,
+      "degree": 2,
+      "gamma": "scale",
+      "kernel": "rbf"
+    }
+  },
+  {
+    "model": "Most Frequent",
+    "accuracy": 0.3958333333333333,
+    "parameters": {
+      "strategy": "most_frequent"
     }
   },
   {
     "model": "Uniform",
-    "accuracy": 0.2916666666666667,
+    "accuracy": 0.2708333333333333,
     "parameters": {
       "strategy": "uniform"
     }
