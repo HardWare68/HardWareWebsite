@@ -31,6 +31,8 @@
 
     <p>There are two scoring methods as well: accuracy and five-fold score. Accuracy is exactly as it sounds, the model does not see 20% of the data and must predict the result of those matches without having any prior knowledge. Five-fold score comes from using GridSearchCV() to find hyperparameters. Read more about it <a href="https://onlinehelp.ihs.com/Energy/AnalyticsExplorer/AE_2025/Webhelp/Content/AnalyticsExplorer/Topics/Analytics_Explorer/k-fold.htm">here.</a> Ideally, accuracy is the best indicator of a model since it has the most insight on how the models perform with no prior knowledge, you know?</p>
 
+    <p>You'll also see the training time <u>in seconds</u> it took to scan the entire grid. This is a bit skewed since some grids are much bigger than others, so don't take it as 100% truth and holy gospel. Rather just some more fun data :)</p>
+
     <div class="w3-container w3-panel w3-border w3-round-large w3-margin">
         <table id="results-table" class="w3-table w3-bordered w3-round-large w3-panel w3-striped">
             <th><tr id="header-row" class="w3-blue"></tr></th>
