@@ -65,7 +65,7 @@
         const lastUpdatedEl = document.getElementById("last-updated");
         if (lastUpdatedEl && data.dateUpdated) {
             lastUpdatedEl.textContent =
-                `Last Updated Results: ${new Date(data.dateUpdated).toLocaleString()}`;
+                `Last Updated Results: ${new Date(data.dateUpdated).toLocaleString()} (Eastern Standard Time)`;
         }
 
         const headerRow = document.getElementById("header-row");
