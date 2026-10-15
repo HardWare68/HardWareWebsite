@@ -34,6 +34,10 @@
     <p>You'll also see the training time <u>in seconds</u> it took to scan the entire grid. This is a bit skewed since some grids are much bigger than others, so don't take it as 100% truth and holy gospel. Rather just some more fun data :)</p>
 
     <div class="w3-container w3-panel w3-border w3-round-large w3-margin">
+        <div>
+            <h4 id="last-updated" class="">Last Updated Results: ... (If you are seeing this, that likely means there was an error!)</h4>
+        </div>
+
         <table id="results-table" class="w3-table w3-bordered w3-round-large w3-panel w3-striped">
             <th><tr id="header-row" class="w3-blue"></tr></th>
             <tbody id="body"></tbody>
@@ -55,9 +59,18 @@
     fetch("../datasets/json/preMatchModels.json")
     .then(r => r.json())
     .then(data => {
+        const models = data.models; //this lad has the array of all the models
+
+        //fun little updater for the date
+        const lastUpdatedEl = document.getElementById("last-updated");
+        if (lastUpdatedEl && data.dateUpdated) {
+            lastUpdatedEl.textContent =
+                `Last Updated Results: ${new Date(data.dateUpdated).toLocaleString()} (Eastern Standard Time)`;
+        }
+
         const headerRow = document.getElementById("header-row");
         const tbody = document.getElementById("body");
-        const cols = Object.keys(data[0]);
+        const cols = Object.keys(models[0]);
 
         cols.forEach(col => {
             const th = document.createElement("th");
@@ -65,7 +78,7 @@
             headerRow.appendChild(th);
         });
 
-        data.forEach(row => {
+        models.forEach(row => {
             const tr = document.createElement("tr");
             cols.forEach(col => {
                 const td = document.createElement("td");
