@@ -23,6 +23,21 @@
       }
     },
     {
+      "model": "AdaBoost with Multi-Layer Perceptron",
+      "accuracy": 0.5531914893617021,
+      "fiveFoldScore": 0.4991465149359886,
+      "trainingTime": 1.102667136098765,
+      "parameters": {
+        "model__estimator__hidden_layer_sizes": [
+          8,
+          4,
+          2
+        ],
+        "model__learning_rate": 0.6000000000000001,
+        "model__n_estimators": 15
+      }
+    },
+    {
       "model": "K Nearest Neighbors",
       "accuracy": 0.5106382978723404,
       "fiveFoldScore": 0.5324324324324325,
