@@ -31,11 +31,19 @@
 
     <p>There are two scoring methods as well: accuracy and five-fold score. Accuracy is exactly as it sounds, the model does not see 20% of the data and must predict the result of those matches without having any prior knowledge. Five-fold score comes from using GridSearchCV() to find hyperparameters. Read more about it <a href="https://onlinehelp.ihs.com/Energy/AnalyticsExplorer/AE_2025/Webhelp/Content/AnalyticsExplorer/Topics/Analytics_Explorer/k-fold.htm">here.</a> Ideally, accuracy is the best indicator of a model since it has the most insight on how the models perform with no prior knowledge, you know?</p>
 
-    <p>You'll also see the training time <u>in seconds</u> it took to to train one fold of the model (recall I am using five-fold validation). A bit of a helpful metric to see how long it takes to train a model, but not very useful as a judge, unless you are worried about time constraints.</p>
+    <p>You'll also see the training time <i>in seconds</i> it took to to train one fold of the model (recall I am using five-fold validation). A bit of a helpful metric to see how long it takes to train a model, but not very useful as a judge, unless you are worried about time constraints.</p>
 
     <div class="w3-container w3-panel w3-border w3-round-large w3-margin">
         <div>
             <h4 id="last-updated" class="">Last Updated Results: ... (If you are seeing this, that likely means there was an error!)</h4>
+        </div>
+
+        <div>
+            <h4 id="training-data" class="">Number of training data points: ...</h4>
+        </div>
+
+        <div>
+            <h4 id="testing-data" class="">Number of testing data points: ...</h4>
         </div>
 
         <table id="results-table" class="w3-table w3-bordered w3-round-large w3-panel w3-striped">
@@ -62,10 +70,22 @@
         const models = data.models; //this lad has the array of all the models
 
         //fun little updater for the date
-        const lastUpdatedEl = document.getElementById("last-updated");
-        if (lastUpdatedEl && data.dateUpdated) {
-            lastUpdatedEl.textContent =
+        const lastUpdatedElement = document.getElementById("last-updated");
+        if (lastUpdatedElement && data.dateUpdated) {
+            lastUpdatedElement.textContent =
                 `Last Updated Results: ${new Date(data.dateUpdated).toLocaleString()} (Eastern Standard Time)`;
+        }
+
+        const trainingDataElement = document.getElementById("training-data");
+        if (trainingDataElement && data.trainingRows) {
+            trainingDataElement.textContent =
+                `Number of training data points: ${data.trainingRows}`;
+        }
+
+        const testingDataElement = document.getElementById("testing-data");
+        if (testingDataElement && data.testingRows) {
+            testingDataElement.textContent =
+                `Number of testing data points: ${data.testingRows}`;
         }
 
         const headerRow = document.getElementById("header-row");
