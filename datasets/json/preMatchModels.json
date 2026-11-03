@@ -1,105 +1,58 @@
 {
-  "dateUpdated": "2026-10-23 11:07:30.878253",
-  "trainingRows": 190,
+  "dateUpdated": "2026-10-30 09:35:07.241875",
+  "trainingRows": 192,
   "testingRows": 48,
   "models": [
     {
       "model": "K Nearest Neighbors",
-      "accuracy": 0.5416666666666666,
-      "fiveFoldScore": 0.5684210526315789,
-      "trainingTime": 0.01565256952391272,
+      "accuracy": 0.5833333333333334,
+      "fiveFoldScore": 0.5253711201079623,
+      "trainingTime": 0.016275417619007863,
       "parameters": {
-        "model__n_neighbors": 11,
+        "model__n_neighbors": 10,
         "model__weights": "distance"
       }
     },
     {
-      "model": "Most Frequent",
-      "accuracy": 0.4375,
-      "fiveFoldScore": 0.0,
-      "trainingTime": 0.024128800025209785,
+      "model": "Multi-Layer Perceptron",
+      "accuracy": 0.5208333333333334,
+      "fiveFoldScore": 0.46855600539811065,
+      "trainingTime": 0.34032179238108384,
       "parameters": {
-        "strategy": "most_frequent"
-      }
-    },
-    {
-      "model": "Histogram Gradient Boosting",
-      "accuracy": 0.4375,
-      "fiveFoldScore": 0.5421052631578946,
-      "trainingTime": 0.11816880900005344,
-      "parameters": {
-        "model__learning_rate": 0.01
-      }
-    },
-    {
-      "model": "Random Forest Classifier",
-      "accuracy": 0.4375,
-      "fiveFoldScore": 0.5736842105263158,
-      "trainingTime": 0.053827612800057975,
-      "parameters": {
-        "model__max_depth": 8,
-        "model__n_estimators": 100
+        "model__hidden_layer_sizes": [
+          200,
+          100
+        ]
       }
     },
     {
       "model": "Bagging with Decision Tree",
-      "accuracy": 0.4375,
-      "fiveFoldScore": 0.5631578947368421,
-      "trainingTime": 0.06206428949207452,
+      "accuracy": 0.5208333333333334,
+      "fiveFoldScore": 0.5785425101214574,
+      "trainingTime": 0.07143742123809052,
       "parameters": {
-        "model__estimator__max_depth": 6,
-        "model__estimator__min_samples_split": 2,
-        "model__n_estimators": 90
-      }
-    },
-    {
-      "model": "AdaBoost with Support Vector Classification",
-      "accuracy": 0.4375,
-      "fiveFoldScore": 0.5105263157894736,
-      "trainingTime": 0.09756025851850778,
-      "parameters": {
-        "model__estimator__degree": 1,
-        "model__learning_rate": 0.2,
-        "model__n_estimators": 10
-      }
-    },
-    {
-      "model": "Decision Tree",
-      "accuracy": 0.4166666666666667,
-      "fiveFoldScore": 0.5421052631578948,
-      "trainingTime": 0.009936698346491699,
-      "parameters": {
-        "model__max_depth": 4,
-        "model__min_samples_leaf": 17,
-        "model__min_samples_split": 2
-      }
-    },
-    {
-      "model": "AdaBoost with DecisionTree",
-      "accuracy": 0.4166666666666667,
-      "fiveFoldScore": 0.5631578947368421,
-      "trainingTime": 0.07571146230000304,
-      "parameters": {
-        "model__estimator__max_depth": 3,
-        "model__learning_rate": 0.791578947368421,
+        "model__estimator__max_depth": 8,
+        "model__estimator__min_samples_split": 3,
         "model__n_estimators": 80
       }
     },
     {
-      "model": "Logistic Regression",
-      "accuracy": 0.3958333333333333,
-      "fiveFoldScore": 0.531578947368421,
-      "trainingTime": 0.01711241924998467,
+      "model": "Support Vector Classification",
+      "accuracy": 0.5,
+      "fiveFoldScore": 0.5311740890688259,
+      "trainingTime": 0.01419917866665249,
       "parameters": {
-        "model__C": 0.01,
-        "model__l1_ratio": 0.0
+        "model__C": 0.89,
+        "model__degree": 2,
+        "model__gamma": "scale",
+        "model__kernel": "rbf"
       }
     },
     {
       "model": "AdaBoost with Multi-Layer Perceptron",
-      "accuracy": 0.3958333333333333,
-      "fiveFoldScore": 0.5368421052631579,
-      "trainingTime": 1.1837630354073818,
+      "accuracy": 0.5,
+      "fiveFoldScore": 0.5102564102564103,
+      "trainingTime": 1.3247912115555682,
       "parameters": {
         "model__estimator__hidden_layer_sizes": [
           16,
@@ -107,51 +60,96 @@
           4,
           2
         ],
-        "model__learning_rate": 1.0,
-        "model__n_estimators": 35
+        "model__learning_rate": 0.8,
+        "model__n_estimators": 50
       }
     },
     {
-      "model": "Support Vector Classification",
-      "accuracy": 0.375,
-      "fiveFoldScore": 0.5578947368421053,
-      "trainingTime": 0.013344187499994102,
+      "model": "Decision Tree",
+      "accuracy": 0.4791666666666667,
+      "fiveFoldScore": 0.5630229419703104,
+      "trainingTime": 0.010755046995614784,
       "parameters": {
-        "model__C": 0.56,
-        "model__degree": 2,
-        "model__gamma": "scale",
-        "model__kernel": "poly"
+        "model__max_depth": 4,
+        "model__min_samples_leaf": 16,
+        "model__min_samples_split": 2
       }
     },
     {
-      "model": "Multi-Layer Perceptron",
-      "accuracy": 0.375,
-      "fiveFoldScore": 0.5263157894736843,
-      "trainingTime": 0.34114935333352714,
+      "model": "Histogram Gradient Boosting",
+      "accuracy": 0.4583333333333333,
+      "fiveFoldScore": 0.5260458839406208,
+      "trainingTime": 0.11843010099983076,
       "parameters": {
-        "model__hidden_layer_sizes": [
-          16,
-          8,
-          4,
-          2
-        ]
+        "model__learning_rate": 0.8957894736842106
       }
     },
     {
-      "model": "Uniform",
-      "accuracy": 0.3541666666666667,
+      "model": "Random Forest Classifier",
+      "accuracy": 0.4583333333333333,
+      "fiveFoldScore": 0.5682860998650472,
+      "trainingTime": 0.05722732040000847,
+      "parameters": {
+        "model__max_depth": 5,
+        "model__n_estimators": 60
+      }
+    },
+    {
+      "model": "Most Frequent",
+      "accuracy": 0.375,
       "fiveFoldScore": 0.0,
-      "trainingTime": 0.0004015000304207206,
+      "trainingTime": 0.02338400000007823,
       "parameters": {
-        "strategy": "uniform"
+        "strategy": "most_frequent"
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.375,
+      "fiveFoldScore": 0.5260458839406207,
+      "trainingTime": 0.018305830650002464,
+      "parameters": {
+        "model__C": 0.01,
+        "model__l1_ratio": 0.10526315789473684
+      }
+    },
+    {
+      "model": "AdaBoost with Support Vector Classification",
+      "accuracy": 0.375,
+      "fiveFoldScore": 0.5260458839406207,
+      "trainingTime": 0.12364979066666112,
+      "parameters": {
+        "model__estimator__degree": 1,
+        "model__learning_rate": 0.2,
+        "model__n_estimators": 10
+      }
+    },
+    {
+      "model": "AdaBoost with DecisionTree",
+      "accuracy": 0.3541666666666667,
+      "fiveFoldScore": 0.5985155195681511,
+      "trainingTime": 0.08451866658000508,
+      "parameters": {
+        "model__estimator__max_depth": 2,
+        "model__learning_rate": 0.32263157894736844,
+        "model__n_estimators": 50
       }
     },
     {
       "model": "Naive Bayes",
-      "accuracy": 0.3125,
+      "accuracy": 0.2916666666666667,
       "fiveFoldScore": 0.0,
-      "trainingTime": 0.0050351000390946865,
+      "trainingTime": 0.006430000008549541,
       "parameters": {}
+    },
+    {
+      "model": "Uniform",
+      "accuracy": 0.20833333333333334,
+      "fiveFoldScore": 0.0,
+      "trainingTime": 0.00031289999606087804,
+      "parameters": {
+        "strategy": "uniform"
+      }
     }
   ]
 }
